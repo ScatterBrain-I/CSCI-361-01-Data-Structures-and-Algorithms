@@ -6,7 +6,8 @@
  *
  **/
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Main{
   public static void main(String args[])
@@ -50,7 +51,7 @@ public class Main{
 
   public class Schedule
   {
-    private ArrayList<Course> m_courses=new ArrayList<Course>();
+    private List<Course> m_courses=new ArrayList<Course>();
     private Course m_course;
 
     public Schedule()
