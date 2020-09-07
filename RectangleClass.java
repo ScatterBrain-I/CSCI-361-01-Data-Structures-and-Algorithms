@@ -9,11 +9,11 @@ I hope my assumptions were not presumptuous.
 public class Rectangle{
   private int m_width;
   private int m_height;
-}
 
-public Rectangle(int w, int h){
-  m_width = w;
-  m_height = h;
+  public Rectangle(int w, int h){
+    m_width = w;
+    m_height = h;
+  }
 }
 
 public int getWidth(){
