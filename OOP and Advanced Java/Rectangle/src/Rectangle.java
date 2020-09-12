@@ -14,10 +14,12 @@ public class Rectangle{
     m_width = 2;
     m_height = 3;
   }
+
   public Rectangle(int w, int h){
     m_width = w;
     m_height = h;
   }
+
   public int getWidth(){
     return m_width;
   }
