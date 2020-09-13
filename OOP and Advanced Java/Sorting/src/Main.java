@@ -3,19 +3,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Comparator;
 
-public class Main
-{
+public class Main{
 	private Object m_p1;
 	private Object m_p2;
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args){
 		Main m = new Main();
 		m.go();
 	}
 
-	private void go()
-	{
+	private void go(){
 		Person p1 = new Person("Peter", 48);
     Person p2 = new Person("Paul", 79);
     Person p3 = new Person("Susan", 79);

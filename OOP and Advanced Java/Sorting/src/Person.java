@@ -1,5 +1,4 @@
-public class Person implements Comparable <Person>
-{
+public class Person implements Comparable <Person>{
   private String m_name;
   private int m_age;
 
