@@ -7,15 +7,12 @@
  **/
 
 public class Main{
-  public static void main(String args[])
-  {
+  public static void main(String args[]){
     Main m = new Main();
     m.go();
   }
 
-  public void go()
-  {
-  //Test it...
+  public void go(){
     Pig Dave = new Pig("Dave");
     Duck Hebert = new Duck("Hebert");
     Pig Snarkle = new Pig("Snarkle");
@@ -26,6 +23,5 @@ public class Main{
     System.out.println(Snarkle.makeSound());
     System.out.println(Lenora.makeSound());
     System.out.println();
-
   }
 }

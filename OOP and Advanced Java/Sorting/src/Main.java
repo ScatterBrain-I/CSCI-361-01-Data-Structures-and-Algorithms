@@ -36,7 +36,6 @@ public class Main{
     people.add(p9);
     people.add(p10);
 
-
 		System.out.println(people);
     Collections.sort(people);
 

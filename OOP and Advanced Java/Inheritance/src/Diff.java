@@ -1,10 +1,7 @@
-
-
 public class Diff extends Sum {
 
-  public Diff(int op1, int op2)
-  {
-  super(op1, op2);
+  public Diff(int op1, int op2){
+    super(op1, op2);
   }
 
   @Override
