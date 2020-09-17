@@ -49,7 +49,7 @@ public class Main{
           else if (first.getAge() < second.getAge())
             return -1;
           else
-              return 0;
+            return 0;
         }
       }
     );

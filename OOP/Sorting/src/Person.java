@@ -3,8 +3,8 @@ public class Person implements Comparable <Person>{
   private int m_age;
 
   public Person(String name, int age){
-      m_name = name;
-      m_age = age;
+    m_name = name;
+    m_age = age;
   }
 
   public String getName(){
@@ -17,7 +17,7 @@ public class Person implements Comparable <Person>{
 
   @Override
   public int compareTo(Person other){
-      return  String.valueOf(other.m_age).compareTo(String.valueOf(m_age));
+    return  String.valueOf(other.m_age).compareTo(String.valueOf(m_age));
   }
 
   @Override
