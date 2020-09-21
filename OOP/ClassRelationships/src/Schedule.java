@@ -1,12 +1,3 @@
-/**
- *
- * @author PeterNiemeyer
- * Assignment: Lab.Class_Relationships
- * Submitted: 8 Sept 20
- *
- **/
-
-
 import java.util.List;
 import java.util.ArrayList;
 
