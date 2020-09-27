@@ -1,3 +1,8 @@
+/*
+Created this file only after doing work on paper. Wanted to double check my
+work as well as run other tests to learn more. looking for patterns, nugative
+inputs, 0s, etc.
+*/
 public class Recursion1{
   public static void main(String[] args){
     System.out.println("Number 1.1");
