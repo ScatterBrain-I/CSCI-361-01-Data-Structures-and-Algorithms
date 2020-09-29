@@ -5,7 +5,7 @@ public class RecursMaths{
 			return 1;
 		}
 		else {
-			return num * power(num, power-1);
+			return num * power(num, power - 1);
 		}
 	}
 
@@ -17,7 +17,7 @@ public class RecursMaths{
 			return 1;
 		}
 		else {
-			return f(n-1) + f(n-2);
+			return f(n - 1) + f(n - 2);
 		}
 	}
 }
