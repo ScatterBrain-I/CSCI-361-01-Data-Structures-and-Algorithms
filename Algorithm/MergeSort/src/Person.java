@@ -28,6 +28,7 @@ public class Person implements Comparable <Person>{
 
   @Override
   public String toString(){
-    return m_last + ", " + m_first + " " + m_age;
+    /*return m_last + ", " + m_first + " " + m_age;*/
+    return m_last+m_age+m_first;
   }
 }

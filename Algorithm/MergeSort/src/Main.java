@@ -8,12 +8,19 @@ public class Main{
     // -----------------------------------
     List<Person> people = new ArrayList<Person>();
 
-    people.add(new Person("Frank", "Denton", 73));
+    /*people.add(new Person("Frank", "Denton", 73));// open this back up before turnig in
     people.add(new Person("Mark", "Cohen", 44));
     people.add(new Person("Tim", "Smith", 22));
     people.add(new Person("Steve", "Denton", 16));
     people.add(new Person("Andy", "Ashton", 44));
-    people.add(new Person("Albert", "Denton", 58));
+    people.add(new Person("Albert", "Denton", 58));*/
+
+    people.add(new Person("A", "A", 1)); // remove this before turning in
+    people.add(new Person("E", "E", 5));
+    people.add(new Person("F", "F", 6));
+    people.add(new Person("C", "C", 3));
+    people.add(new Person("B", "B", 2));
+    people.add(new Person("D", "D", 4));
 
     List<Person> ans = mergeSort(people);
     System.out.println(ans);
@@ -25,7 +32,7 @@ public class Main{
     if (items.size() == 1){
       //sorted.add(items.get(0));
       sorted = items;
-      System.out.println("BaseCase" + sorted); //Debug line
+      System.out.println("Base:" + sorted); //Debug line
 
     }
     else {
@@ -43,8 +50,8 @@ public class Main{
           listB.add(items.get(i));
         }
       }
-      System.out.println("list A: " + listA); //Debug line
-      System.out.println("list B: " + listB); //Debug line
+      System.out.println("A: " + listA); //Debug line
+      System.out.println("B: " + listB); //Debug line
       System.out.println();
       //sort both sublists
       sortedA = mergeSort(listA);
@@ -59,12 +66,11 @@ public class Main{
     List<Person> merged = new ArrayList<Person>();
     int indexA = 0;
     int indexB = 0;
-    System.out.println("PartASize:" + partA.size() + "  PartBSize:"+ partB.size());
+    System.out.println("* PartASize:" + partA.size() + "  PartBSize:"+ partB.size()); //Debug line
     while (indexA < partA.size() && indexB < partB.size()){
-      System.out.println("Point A: " + " iA:" + indexA + "  iB:" +  indexB + " " + merged); //Debug line
       if (partA.get(indexA).compareTo(partB.get(indexB)) < 0){
         merged.add(partA.get(indexA));
-        System.out.println("whileif: " + " iA:" + indexA + "  iB:" +  indexB + " " + merged); //Debug line
+        System.out.println("* While if: " + merged); //Debug line
         indexA++;
       }
       /*else if (partA.get(indexA).compareTo(partB.get(indexB)) == 0){
@@ -79,7 +85,7 @@ public class Main{
       }*/
       else{
         merged.add(partB.get(indexB));
-        System.out.println("whileelse: " + " iA:" + indexA + "  iB:" +  indexB + " " + merged); //Debug line
+        System.out.println("* While Else: " + merged); //Debug line
         indexB++;
       }
     }
