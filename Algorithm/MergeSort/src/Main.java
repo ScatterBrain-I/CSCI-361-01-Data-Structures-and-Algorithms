@@ -47,10 +47,10 @@ public class Main{
       System.out.println("list B: " + listB); //Debug line
       System.out.println();
       //sort both sublists
-      mergeSort(listA);
-      mergeSort(listB);
+      sortedA = mergeSort(listA);
+      sortedB = mergeSort(listB);
       //merge two lists
-      merge(listA, listB);
+      merged = merge(sortedA, sortedB);
     }
     return sorted;
   }
