@@ -21,6 +21,7 @@ public class Person implements Comparable <Person>{
     return m_age;
   }
 
+  // Natural Ordering by Last Name
   @Override
   public int compareTo(Person other){
     return m_last.compareTo(other.m_last);
@@ -28,7 +29,6 @@ public class Person implements Comparable <Person>{
 
   @Override
   public String toString(){
-    /*return m_last + ", " + m_first + " " + m_age;*/
-    return m_last+m_age+m_first;
+    return m_last + ", " + m_first + " " + m_age;
   }
 }
