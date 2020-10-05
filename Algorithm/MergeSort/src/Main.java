@@ -50,19 +50,21 @@ public class Main{
       sortedA = mergeSort(listA);
       sortedB = mergeSort(listB);
       //merge two lists
-      merge(sortedA, sortedB);
+      sorted = merge(sortedA, sortedB);
     }
     return sorted;
   }
 
   private static List<Person> merge(List<Person> partA, List<Person> partB){
     List<Person> merged = new ArrayList<Person>();
-
-    while (partA.size() > 0 && partB.size() > 0){
-      int indexA = 0;
-      int indexB = 0;
+    int indexA = 0;
+    int indexB = 0;
+    System.out.println("PartASize:" + partA.size() + "  PartBSize:"+ partB.size());
+    while (indexA < partA.size() && indexB < partB.size()){
+      System.out.println("Point A: " + " iA:" + indexA + "  iB:" +  indexB + " " + merged); //Debug line
       if (partA.get(indexA).compareTo(partB.get(indexB)) < 0){
         merged.add(partA.get(indexA));
+        System.out.println("whileif: " + " iA:" + indexA + "  iB:" +  indexB + " " + merged); //Debug line
         indexA++;
       }
       /*else if (partA.get(indexA).compareTo(partB.get(indexB)) == 0){
@@ -77,17 +79,20 @@ public class Main{
       }*/
       else{
         merged.add(partB.get(indexB));
+        System.out.println("whileelse: " + " iA:" + indexA + "  iB:" +  indexB + " " + merged); //Debug line
         indexB++;
       }
     }
 
-    if (partA.size() > 0){
-      merged.add(partA.get(0));
+    /*if (partA.size() > 0){
+      System.out.println("ifA: " + " iA:" + indexA + "  iB:" +  indexB + " " + merged); //Debug line
+      merged.add(partA.get(indexA));
     }
 
     if (partB.size() > 0){
-      merged.add(partB.get(0));
-    }
+      System.out.println("ifB: " + " iA:" + indexA + "  iB:" +  indexB + " " + merged); //Debug line
+      merged.add(partB.get(indexB));
+    }*/
 
   return merged;
   }
