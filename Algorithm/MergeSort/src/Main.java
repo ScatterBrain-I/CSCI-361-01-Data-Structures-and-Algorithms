@@ -50,7 +50,7 @@ public class Main{
       sortedA = mergeSort(listA);
       sortedB = mergeSort(listB);
       //merge two lists
-      merged = merge(sortedA, sortedB);
+      merge(sortedA, sortedB);
     }
     return sorted;
   }
