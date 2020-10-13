@@ -5,7 +5,7 @@ public class Combination{
       return 1;
     }
     else{
-      return combination(n-1, k) + combination(n-1, k-1);
+      return combination(n - 1, k) + combination(n - 1, k - 1);
     }
   }
 }

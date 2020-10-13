@@ -14,7 +14,7 @@ public class Main{
     people.add(new Person("Steve", "Denton", 16));
     people.add(new Person("Andy", "Ashton", 44));
     people.add(new Person("Albert", "Denton", 58));
-
+System.out.println(people);
     List<Person> ans = mergeSort(people);
     System.out.println(ans);
   }
