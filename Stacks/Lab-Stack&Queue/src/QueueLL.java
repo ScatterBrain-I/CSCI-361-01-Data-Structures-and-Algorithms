@@ -45,7 +45,7 @@ public class QueueLL<T extends Comparable<T>> implements IQueue<T>{
     for (int i = m_count; i > 0; i--){
       enqueue(stack.pop());
     }
-	}
+  }
 
 	public void sort(){
     ArrayList<T> temp  = new ArrayList<T>();
@@ -56,7 +56,7 @@ public class QueueLL<T extends Comparable<T>> implements IQueue<T>{
     for (T x : temp){
       enqueue(x);
     }
-	}
+  }
 
 	@Override
 	public void enqueue(T item){
@@ -65,56 +65,54 @@ public class QueueLL<T extends Comparable<T>> implements IQueue<T>{
 		n.m_next = m_head.m_next;
 		m_head.m_next = n;
 		m_count++;
-	}
+  }
 
 	@Override
 	public T dequeue(){
     // FIFO: this queue removes items from the tail of the queue...
-		if (isEmpty()){
-			throw new IllegalStateException("dequeue error: queue is empty!");
+    if (isEmpty()){
+      throw new IllegalStateException("dequeue error: queue is empty!");
     }
 
-		T ret = null;
-		Node cur = m_head;
+    T ret = null;
+    Node cur = m_head;
 
-		// while not at the tail...
-		while (cur.m_next != null){
-			// if I am at the second from the tail of the queue...
-			if (cur.m_next.m_next == null){
-				// grab the data from the last item in the queue...
-				ret = cur.m_next.m_data;
-				// detatch the last item in the queue...
-				cur.m_next = null;
-				break;
+    // while not at the tail...
+    while (cur.m_next != null){
+      // if I am at the second from the tail of the queue...
+      if (cur.m_next.m_next == null){
+        // grab the data from the last item in the queue...
+        ret = cur.m_next.m_data;
+        // detatch the last item in the queue...
+        cur.m_next = null;
+        break;
       } else {
-				// otherwise, continue moving towards the tail of the queue...
-				cur = cur.m_next;
-			}
-		}
-		m_count--;
-		return ret;
-	}
+        // otherwise, continue moving towards the tail of the queue...
+        cur = cur.m_next;
+      }
+    }
+    m_count--;
+    return ret;
+  }
 
-	@Override
+  @Override
 	public boolean isEmpty(){
-		return getSize() == 0;
-	}
+    return getSize() == 0;
+  }
 
 	@Override
 	public int getSize(){
-		return m_count;
-	}
+    return m_count;
+  }
 
 	@Override
 	public String toString(){
-		// runs in linear time...
-
-		StringBuffer sb = new StringBuffer("rear->");
-		if (!isEmpty()){
-			Node node = m_head.m_next;
-			sb.append(node.m_data.toString());
-			while (node.m_next != null){
-				node = node.m_next;
+    StringBuffer sb = new StringBuffer("rear->");
+    if (!isEmpty()){
+      Node node = m_head.m_next;
+      sb.append(node.m_data.toString());
+      while (node.m_next != null){
+        node = node.m_next;
 				sb.append("->");
 				sb.append(node.m_data.toString());
 			}
