@@ -7,7 +7,7 @@ public interface IQueue<T>{
 
 	public int getSize();
 
-  public void reverse();
+  	public void reverse();
 
-  public void sort();
+  	public void sort();
 }
