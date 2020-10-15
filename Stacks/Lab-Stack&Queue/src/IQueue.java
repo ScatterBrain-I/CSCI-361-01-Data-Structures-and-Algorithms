@@ -1,5 +1,4 @@
-public interface IQueue<T>
-{
+public interface IQueue<T>{
 	public void enqueue(T item);
 
 	public T dequeue();
