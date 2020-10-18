@@ -8,9 +8,9 @@ public class StackArray<T> implements IStack<T>{
 
 	@Override
 	public void push(T item){
-		if (ary.length == ary.getSize()){
+		if (ary.length == getSize()){
 			T[] temp;
-			temp = (T[])new Object[ary.getSize() * 2];
+			temp = (T[])new Object[getSize() * 2];
 			for (int i = 0; i < ary.length; i++) {
       			temp[i] = ary[i];
 			}
@@ -25,9 +25,9 @@ public class StackArray<T> implements IStack<T>{
 		if (isEmpty()){
 			throw new IllegalStateException("pop error: stack is empty!");
 		}
+		ary[top()] = null;
 		m_count--;
-		T ret = ary.getSize();
-		return ret;
+		return ary;
 	}
 
 	@Override
@@ -52,12 +52,10 @@ public class StackArray<T> implements IStack<T>{
 	public String toString(){
 		StringBuffer sb = new StringBuffer("top->");
 		if (!isEmpty()){
-			T[] reveal;
-			reveal = (T[])new Object[ary.getSize()];
-			sb.append(reveal[getSize() - 1].toString());
-			for (int i = reveal.getSize() - 2; i > -1; i--){
+			sb.append(ary[getSize() - 1].toString());
+			for (int i = getSize() - 2; i > -1; i--){
 				sb.append("->");
-				sb.append(reveal[i].toString());
+				sb.append(ary[i].toString());
 			}
 		}
 		return sb.toString();
