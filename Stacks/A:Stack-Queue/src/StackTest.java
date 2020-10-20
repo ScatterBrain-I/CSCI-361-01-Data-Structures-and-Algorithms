@@ -1,15 +1,12 @@
-public class StackTest
-{
-	public static void main(String[] args)
-	{
+public class StackTest{
+	public static void main(String[] args){
 		StackTest tester = new StackTest();
 
-		IStack<Integer> stack = new StackArray<Integer>();
+		IStack<Integer> stack = new StackAL<Integer>();
 		tester.test(stack);
 	}
 
-	public void test(IStack<Integer> stack)
-	{
+	public void test(IStack<Integer> stack){
 		System.out.println("Start tests...");
 
 		// test push, pop, push, pop...
@@ -108,22 +105,18 @@ public class StackTest
 
 		// check for pop or top on emtpy stack...
 		boolean ok = false;
-		try
-		{
+		try{
 			stack.pop();
 		}
-		catch (IllegalStateException e)
-		{
+		catch (IllegalStateException e){
 			ok = true;
 		}
 		check(ok);
 
-		try
-		{
+		try{
 			stack.top();
 		}
-		catch (IllegalStateException e)
-		{
+		catch (IllegalStateException e){
 			ok = true;
 		}
 		check(ok);
@@ -131,10 +124,9 @@ public class StackTest
 		System.out.println("Success!");
 	}
 
-	private static void check(boolean b)
-	{
-		if (!b)
+	private static void check(boolean b){
+		if (!b){
 			throw new AssertionError("Test Failed!");
+		}
 	}
-
 }

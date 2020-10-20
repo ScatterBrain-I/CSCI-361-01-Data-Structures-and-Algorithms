@@ -21,7 +21,7 @@ public interface IStack<T>
 	 * @return the element that was removed from the stack.
 	 * @throws IllegalStateException if the stack is empty.
 	 */
-	public T pop();
+	public3 T pop();
 
 
 	/**

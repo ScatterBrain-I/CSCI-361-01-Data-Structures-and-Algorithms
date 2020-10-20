@@ -1,22 +1,16 @@
-public class StackArray<T> implements IStack<T>{
+public class StackAL<T> implements IStack<T>{
+	private Node m_head;
 	private int m_count;
-	private T[] ary;
 
-	public StackArray(){
-		ary = (T[])new Object[2];
+	public StackAL(){
+		m_head = new Node(null);
 	}
 
 	@Override
 	public void push(T item){
-		if (ary.length == ary.getSize()){
-			T[] temp;
-			temp = (T[])new Object[ary.getSize() * 2];
-			for (int i = 0; i < ary.length; i++) {
-      			temp[i] = ary[i];
-			}
-			ary = temp;
-		}
-		ary[m_count] = item;
+		Node n = new Node(item);
+		n.m_next = m_head.m_next;
+		m_head.m_next = n;
 		m_count++;
 	}
 
@@ -26,7 +20,8 @@ public class StackArray<T> implements IStack<T>{
 			throw new IllegalStateException("pop error: stack is empty!");
 		}
 		m_count--;
-		T ret = ary.getSize();
+		T ret = m_head.m_next.m_data;
+		m_head.m_next = m_head.m_next.m_next;
 		return ret;
 	}
 
@@ -35,7 +30,7 @@ public class StackArray<T> implements IStack<T>{
 		if (isEmpty()){
 			throw new IllegalStateException("top error: stack is empty!");
 		}
-		return  ary[ary.length - 1];
+		return  m_head.m_next.m_data;
 	}
 
 	@Override
@@ -52,14 +47,24 @@ public class StackArray<T> implements IStack<T>{
 	public String toString(){
 		StringBuffer sb = new StringBuffer("top->");
 		if (!isEmpty()){
-			T[] reveal;
-			reveal = (T[])new Object[ary.getSize()];
-			sb.append(reveal[getSize() - 1].toString());
-			for (int i = reveal.getSize() - 2; i > -1; i--){
+			Node node = m_head.m_next;
+			sb.append(node.m_data.toString());
+			while (node.m_next != null){
+				node = node.m_next;
 				sb.append("->");
-				sb.append(reveal[i].toString());
+				sb.append(node.m_data.toString());
 			}
 		}
 		return sb.toString();
+	}
+
+	private class Node{
+	 	private T m_data;
+	 	private Node m_next;
+
+		public Node(T data){
+			m_data = data;
+			m_next = null;
+		}
 	}
 }
