@@ -1,5 +1,6 @@
 import java.util.Scanner;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Maze3{
     private int xCoord;
