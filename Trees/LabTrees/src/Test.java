@@ -9,32 +9,32 @@ public class Test
             B       C
          D     E       F
         */
-        SimpleTree treeD = new SimpleTree("D");
-        SimpleTree treeE = new SimpleTree("E");
-        SimpleTree treeF = new SimpleTree("F");
-        SimpleTree treeB = new SimpleTree("B", treeD, treeE);
-        SimpleTree treeC = new SimpleTree("C", null, treeF);
-        SimpleTree root = new SimpleTree("A", treeB, treeC);
-        
+        BinaryTree treeD = new SimpleTree("D");
+        BinaryTree treeE = new SimpleTree("E");
+        BinaryTree treeF = new SimpleTree("F");
+        BinaryTree treeB = new SimpleTree("B", treeD, treeE);
+        BinaryTree treeC = new SimpleTree("C", null, treeF);
+        BinaryTree root = new SimpleTree("A", treeB, treeC);
+
         // D B E A C F
         String s = root.toString();
         System.out.println(s);
-        
-        List<SimpleTree> trees = new ArrayList<SimpleTree>();
+
+        List<BinaryTree> trees = new ArrayList<BinaryTree>();
         trees.add(treeD);
         trees.add(treeF);
         trees.add(treeC);
         trees.add(treeE);
         trees.add(root);
         trees.add(treeB);
-        
+
         Collections.sort(trees);
-        
-        for (SimpleTree t : trees)
+
+        for (BinaryTree t : trees)
         {
             System.out.println();
             System.out.print(t.getValue() + " ");
             System.out.println();
-        } 
+        }
     }
 }
