@@ -1,5 +1,3 @@
-import java.util.List;
-
 public interface IHeap
 {
 	// Adds an item to the heap.

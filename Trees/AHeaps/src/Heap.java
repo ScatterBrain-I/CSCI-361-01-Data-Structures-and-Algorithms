@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Heap implements IHeap {
     private int[] Heap;
     private int heapSize = 0;
