@@ -14,5 +14,8 @@ public class Main {
        //remove an item (print statement to show working return) - rebuild heap - print
        System.out.println(h.removeTop());
        System.out.println(h);
+       //clear the heap and print
+       h.clear();
+       System.out.println(h);
     }
 }

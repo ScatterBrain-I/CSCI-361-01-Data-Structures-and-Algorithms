@@ -93,10 +93,15 @@ public class Heap implements IHeap {
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer("[ ");
-		for (int i = 0; i < (heapSize - 1); i++) {
-			sb.append(Heap[i] + ", ");
-		}
-        sb.append(Heap[heapSize - 1] + " ]");
+        if (heapSize==0) {
+            sb.append("]");
+        }
+        else {
+    		for (int i = 0; i < (heapSize - 1); i++) {
+    			sb.append(Heap[i] + ", ");
+    		}
+            sb.append(Heap[heapSize - 1] + " ]");
+        }
 		return sb.toString();
     }
 
