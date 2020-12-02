@@ -43,7 +43,8 @@ public class Main {
     public List<Integer> getAllLeaves(int ary[]) {
         List<Integer> l = new ArrayList<Integer>();
         for (int i = 0; i < ary.length; i++) {
-            if (i * 2 + 1 > ary.length && i * 2 + 2 > ary.length) {
+            if (i * 2 + 1 > ary.length || i * 2 + 2 > ary.length) {
+                System.out.println(i + ":" + ary[i]);
                 l.add(ary[i]);
             }
         }
