@@ -15,6 +15,7 @@ public class Main {
     //Print Code HashMap
     System.out.print("HashMap of Codes: ");
     huff.printCodeTable();
+    
     // inputs a test string to be encoded and the output to be decoded checking for parity
     String rawText = "ADDZZ";
     String encoded = huff.encode(rawText);
