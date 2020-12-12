@@ -45,8 +45,9 @@ public class Heap<T extends Comparable<T>> implements IHeap<T> {
   }
 
   public void reheapUp(int index) {
-    if (index == 0)
+    if (index == 0) {
       return;
+    }
 
     int parentIndex = getParentIndex(index);
     T current = nodes.get(index);
@@ -59,8 +60,9 @@ public class Heap<T extends Comparable<T>> implements IHeap<T> {
   }
 
   private void reheapDown(int index) {
-    if (size() == 0)
+    if (size() == 0) {
       return;
+    }
 
     T me = nodes.get(index);
 
@@ -69,11 +71,13 @@ public class Heap<T extends Comparable<T>> implements IHeap<T> {
     T left = null;
     T right = null;
 
-    if (leftIndex < size())
+    if (leftIndex < size()) {
       left = nodes.get(getLeftIndex(index));
+    }
 
-    if (rightIndex < size())
+    if (rightIndex < size()) {
       right = nodes.get(getRightIndex(index));
+    }
 
     // no children, can't move down...
     if (left == null && right == null) {
@@ -81,22 +85,27 @@ public class Heap<T extends Comparable<T>> implements IHeap<T> {
     }
 
     // I am bigger than both children, can't move down...
-    if (left != null && compare(me, left) > 0 && right != null && compare(me, right) > 0)
+    if (left != null && compare(me, left) > 0 && right != null && compare(me, right) > 0) {
       return;
+    }
 
     // I am smaller than both children, so move towards the larger child...
     if (left != null && compare(me, right) < 0 && right != null && compare(me, left) < 0) {
-      if (compare(left, right) > 0)
+      if (compare(left, right) > 0) {
         reheapDownLeft(index);
-      else
+      }
+      else {
         reheapDownRight(index);
+      }
     }
     // I am smaller than the left, so move down to the left...
-    else if (left != null && compare(me, left) < 0)
+    else if (left != null && compare(me, left) < 0) {
       reheapDownLeft(index);
+    }
     // I am smaller than the right, so move down to the right...
-    else if (right != null && compare(me, right) < 0)
+    else if (right != null && compare(me, right) < 0) {
       reheapDownRight(index);
+    }
   }
 
   private void reheapDownLeft(int index) {
@@ -132,8 +141,9 @@ public class Heap<T extends Comparable<T>> implements IHeap<T> {
   }
 
   private int compare(T item1, T item2) {
-    if (item1 == null || item2 == null)
+    if (item1 == null || item2 == null) {
       return 0;
+    }
 
     return item1.compareTo(item2);
   }
