@@ -7,7 +7,7 @@ public class Main {
 	    Huffman huff = new Huffman();
 	    huff.bulidTreeFromFile("tree.txt");
         System.out.println("Huffman Encode/Decode test:");
-        
+
         // GetCode works
         System.out.println("Get Code for 'A': " + huff.getCode('A'));
         System.out.println("Get Code for 'E': " + huff.getCode('E'));
@@ -23,10 +23,10 @@ public class Main {
         System.out.printf("%s encoded as: %s%n", rawText, encoded);
         System.out.printf("%s decoded as: %s%n", encoded, decoded);
         if (rawText.equals(decoded)) {
-            System.out.println("Encoding and decoding have worked properly:");
+            System.out.println("Encoding and decoding have worked properly.");
         }
         else {
-            System.out.println("Something went wrong with the encoding and decoding:");
+            System.out.println("Something went wrong with the encoding and decoding.");
         }
 	}
 }
